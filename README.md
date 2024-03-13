@@ -1,3 +1,5 @@
+[![Playwright Tests](https://github.com/Foppp/test-pl/actions/workflows/playwright.yml/badge.svg)](https://github.com/Foppp/test-pl/actions/workflows/playwright.yml)
+
 # Welcome to Remix!
 
 - [Remix Docs](https://remix.run/docs)
