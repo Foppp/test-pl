@@ -38,7 +38,7 @@ jobs:
         if: ${{steps.cache.outputs.cache-hit != 'true'}}
         run: npx playwright test --update-snapshots
       - name: Update snapshots
-        if: ${{inputs.update-snapshots == 'true'}}
+        if: ${{inputs.update-snapshots}}
         run: npx playwright test --update-snapshots
       - name: Test
         continue-on-error: false
