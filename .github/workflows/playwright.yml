@@ -9,11 +9,6 @@ on:
         update-snapshots:
           description: "Update snapshots?"
           type: boolean
-  workflow_dispatch:
-    inputs:
-        update-snapshots:
-          description: "Update snapshots?"
-          type: boolean
 jobs:
   test:
     timeout-minutes: 60
@@ -34,9 +29,6 @@ jobs:
           key: cache/${{github.repository}}/${{github.ref}}
           restore-keys: cache/${{github.repository}}/refs/heads/main
           path: .test/**
-      - name: Initialize snapshots
-        if: ${{steps.cache.outputs.cache-hit != 'true'}}
-        run: npx playwright test --update-snapshots
       - name: Initialize snapshots
         if: ${{steps.cache.outputs.cache-hit != 'true' || inputs.update-snapshots == 'true'}}
         run: npx playwright test --update-snapshots --reporter html
