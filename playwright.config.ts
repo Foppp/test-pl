@@ -13,7 +13,6 @@ const isCI = !!process.env.CI;
 
 export default defineConfig({
   testDir: "./test/e2e",
-  timeout: 1000 * 60,
   workers: isCI ? 1 : "50%",
   retries: isCI ? 2 : 0,
   forbidOnly: isCI,
