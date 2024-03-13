@@ -50,7 +50,6 @@ export default function Index() {
                 onChange={(e) => setInp(e.target.value)}
               />
             </p>
-
             <p>
               <input
                 type="text"
