@@ -59,7 +59,7 @@ export default function Index() {
               />
             </p>
             <input type="hidden" name="data" value={inp2 + inp} />
-            <button type="submit">Some Submit!</button>
+            <button type="submit">Feature Changed</button>
           </Form>
         </div>
       </div>
