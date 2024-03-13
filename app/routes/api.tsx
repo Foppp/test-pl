@@ -1,14 +1,5 @@
-import {
-  json,
-  type ActionFunctionArgs,
-} from "@remix-run/node";
+import { json, type ActionFunctionArgs } from "@remix-run/node";
 import { queryAiMobileFakeSearch } from "~/api/s";
-
-// export const loader = async ({ request }: LoaderFunctionArgs) => {
-//   const formData = await request.formData();
-//   const a = Object.fromEntries(formData);
-//   console.log("+++++++", a);
-// };
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
@@ -22,5 +13,5 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   } catch (e) {
     // console.log("+++++++e÷rror", e);
   }
-//   return null;
+  //   return null;
 };
