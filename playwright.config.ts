@@ -21,7 +21,21 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   updateSnapshots: "missing",
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: process.env.CI ? "dot" : "list",
+  outputDir: ".test/spec/output",
+  snapshotPathTemplate:
+    ".test/spec/snaps/{projectName}/{testFilePath}/{arg}{ext}",
+  testMatch: "*.spec.{ts,tsx}",
+
+  reporter: [
+    [
+      "html",
+      {
+        outputFolder: ".test/spec/results",
+        open: "never",
+      },
+    ],
+    process.env.CI ? ["github"] : ["line"],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
