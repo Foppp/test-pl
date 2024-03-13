@@ -9,11 +9,6 @@ on:
       update-snapshots:
         description: "Update snapshots?"
         type: boolean
-  workflow_dispatch:
-    inputs:
-      update-snapshots:
-        description: "Update snapshots?"
-        type: boolean
 jobs:
   test:
     timeout-minutes: 60
