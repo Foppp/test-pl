@@ -33,7 +33,7 @@ jobs:
         with:
           key: cache/${{github.repository}}/${{github.ref}}
           restore-keys: cache/${{github.repository}}/refs/heads/main
-          path: .test/**
+          path: test/e2e/__snapshots__/**
       - name: Initialize snapshots
         if: ${{steps.cache.outputs.cache-hit != 'true'}}
         run: npx playwright test --update-snapshots

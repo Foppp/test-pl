@@ -21,16 +21,16 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   updateSnapshots: "missing",
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  outputDir: ".test/spec/output",
+  outputDir: "./test/e2e/__snapshots__/output",
   snapshotPathTemplate:
-    ".test/spec/snaps/{projectName}/{testFilePath}/{arg}{ext}",
+    "./test/e2e/__snapshots__/snaps/{projectName}/{testFilePath}/{arg}{ext}",
   testMatch: "*.spec.{ts,tsx}",
 
   reporter: [
     [
       "html",
       {
-        outputFolder: ".test/spec/results",
+        outputFolder: "./test/e2e/__snapshots__/results",
         open: "never",
       },
     ],
