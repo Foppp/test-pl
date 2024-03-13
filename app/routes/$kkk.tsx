@@ -60,7 +60,7 @@ export default function Index() {
               />
             </p>
             <input type="hidden" name="data" value={inp2 + inp} />
-            <button type="submit">Sign Up</button>
+            <button type="submit">Sign Up666</button>
           </Form>
         </div>
       </div>
