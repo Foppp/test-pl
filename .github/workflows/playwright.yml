@@ -2,10 +2,7 @@ name: Playwright Tests
 on:
   pull_request:
     branches:
-      - "*"
-  push:
-    branches:
-      - "*"
+      - main
   workflow_call:
     inputs:
       update-snapshots:
@@ -33,8 +30,8 @@ jobs:
         id: cache
         uses: actions/cache@v4
         with:
-          key: cache/${{github.repository}}/${{github.ref}}
-          restore-keys: cache/${{github.repository}}/refs/heads/master
+          key: cache-${{github.repository}}-${{github.ref}}
+          restore-keys: cache/${{github.repository}}-
           path: .test/**
       - name: Initialize snapshots
         if: ${{steps.cache.outputs.cache-hit != 'true'}}
