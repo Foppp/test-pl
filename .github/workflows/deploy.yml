@@ -3,8 +3,10 @@ on:
   pull_request:
     branches:
       - main
+    types:
+      - closed
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 BUILD ${{ github.event_name }} event."
+      - run: echo "🍏 DEPLOY ${{ job.status }}."
