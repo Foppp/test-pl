@@ -26,21 +26,6 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Set up cache
-        id: cache
-        uses: actions/cache@v4
-        with:
-          key: cache-${{github.repository}}-${{github.ref}}
-          restore-keys: |
-            cache-${{github.repository}}-
-            cache-
-          path: .test/**
-      - name: Initialize snapshots
-        if: ${{steps.cache.outputs.cache-hit != 'true'}}
-        run: npx playwright test --update-snapshots
-      - name: Update snapshots
-        if: ${{inputs.update-snapshots}}
-        run: npx playwright test --update-snapshots
       - name: Run Tests
         continue-on-error: false
         run: npm run test
