@@ -1,11 +1,18 @@
-import { ActionFunctionArgs, json } from "@remix-run/node";
 import {
-  Form,
-  useActionData,
-  useFetcher,
-  useNavigation,
-} from "@remix-run/react";
-import { useEffect, useRef, useState } from "react";
+  type ActionFunctionArgs,
+  type MetaFunction,
+  json,
+} from "@remix-run/node";
+
+import { useRef } from "react";
+
+export const meta: MetaFunction = () => {
+  return [
+    {
+      title: "titleContent",
+    },
+  ];
+};
 
 export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
@@ -16,8 +23,6 @@ export async function action({ request }: ActionFunctionArgs) {
 
 export default function Index() {
   const containerRef = useRef<HTMLDivElement>(null);
-
-  const [open, setOpen] = useState(false);
 
   return (
     <div ref={containerRef} className="w-screen h-screen bg-red-200">
