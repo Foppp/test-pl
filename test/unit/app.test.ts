@@ -7,7 +7,7 @@ test("2", () => {
   expect(5 + 14).toBe(19);
 });
 test("3", () => {
-  expect([]).toHaveLength(10);
+  expect([]).toHaveLength(0);
 });
 test("4", () => {
   expect([3, 5]).toHaveLength(2);
