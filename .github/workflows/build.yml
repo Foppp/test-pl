@@ -31,7 +31,7 @@ jobs:
         uses: actions/cache@v4
         with:
           key: cache/${{github.repository}}/${{github.ref}}
-          restore-keys: cache/${{github.repository}}/refs/heads/main
+          restore-keys: cache/${{github.repository}}/refs/pull
           path: .test/**
       - name: Initialize snapshots
         if: ${{steps.cache.outputs.cache-hit != 'true'}}
