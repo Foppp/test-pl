@@ -16,53 +16,25 @@ export async function action({ request }: ActionFunctionArgs) {
 
 export default function Index() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const boxRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLFormElement>(null);
-  const [inp, setInp] = useState("");
-  const [inp2, setInp2] = useState("");
-  const actionData = useActionData<typeof action>();
-  console.log(actionData);
+
+  const [open, setOpen] = useState(false);
 
   return (
-    <main>
-      <div
-        ref={containerRef}
-        className="container w-screen h-screen bg-red-200"
-      >
-        <div ref={boxRef} className="box w-44 h-44 bg-green-500">
-          <Form
-            ref={formRef}
-            onSubmit={(e) => {
-              setInp("");
-              setInp2("");
-            }}
-            method="post"
-            action="/$kkk"
-            reloadDocument={false}
-            replace={false}
-            navigate={false}
-          >
-            <p>
-              <input
-                type="text"
-                name="email"
-                value={inp}
-                onChange={(e) => setInp(e.target.value)}
-              />
-            </p>
-            <p>
-              <input
-                type="text"
-                name="password"
-                value={inp2}
-                onChange={(e) => setInp2(e.target.value)}
-              />
-            </p>
-            <input type="hidden" name="data" value={inp2 + inp} />
-            <button type="submit">Baseline!!!!!</button>
-          </Form>
+    <div ref={containerRef} className="w-screen h-screen bg-red-200">
+      <div className="flex flex-col justify-between items-center w-[500px] mx-auto border-2 border-solid rounded-3xl bg-green-400">
+        <div className="flex flex-col border-r border-solid border-black">
+          <div className=" w-full min-h-52 items-start align-top self-start">
+            <div>content</div>
+          </div>
+          <div className="flex items-start align-top w-24 h-full self-start">
+            <div className="max-h-52 h-full flex flex-col justify-center w-full">
+              <span className="border border-red-300 w-10 mx-auto">1</span>
+              <span className="border border-red-300 w-10 mx-auto">2</span>
+            </div>
+          </div>
         </div>
+        <div className="border-r border-solid border-black">features</div>
       </div>
-    </main>
+    </div>
   );
 }
