@@ -3,9 +3,6 @@ on:
   pull_request:
     branches:
       - main
-  push:
-    branches:
-      - main
   workflow_call:
     inputs:
       update-snapshots:
@@ -33,8 +30,7 @@ jobs:
         id: cache
         uses: actions/cache@v4
         with:
-          key: cache-snapshots-${{github.ref}}
-          restore-keys: cache-snapshots-
+          key: cache-snapshots-main
           path: .test/**
       - name: Initialize snapshots
         if: ${{steps.cache.outputs.cache-hit != 'true'}}
