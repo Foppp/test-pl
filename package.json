@@ -12,7 +12,7 @@
     "test:eslint": "eslint --color --max-warnings=0 '**/*.[t|j]s?(x)'",
     "test:typescript": "tsc --noEmit --pretty",
     "test:unit": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "npx playwright test"
   },
   "dependencies": {
     "@remix-run/css-bundle": "^2.2.0",
