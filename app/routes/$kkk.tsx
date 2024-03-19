@@ -38,9 +38,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="border-r border-solid border-black">
-          features@@@@@@@@@
-        </div>
+        <div className="border-r border-solid border-black">features</div>
       </div>
     </div>
   );
