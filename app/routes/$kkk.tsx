@@ -18,7 +18,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
 
   const data = String(formData.get("data"));
-  return json({ some: data });
+  return json({ some: data, some2: "data" });
 }
 
 export default function Index() {
