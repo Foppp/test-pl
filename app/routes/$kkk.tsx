@@ -9,7 +9,7 @@ import { useRef } from "react";
 export const meta: MetaFunction = () => {
   return [
     {
-      title: "titleContentr",
+      title: "titleContent",
     },
   ];
 };
