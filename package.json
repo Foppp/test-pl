@@ -12,7 +12,8 @@
     "test:eslint": "eslint --color --max-warnings=0 '**/*.[t|j]s?(x)'",
     "test:typescript": "tsc --noEmit --pretty",
     "test:unit": "vitest",
-    "e2e": "npx playwright test"
+    "e2e": "npx playwright test",
+    "precommit": "./pre-git-add.sh"
   },
   "dependencies": {
     "@remix-run/css-bundle": "^2.2.0",
