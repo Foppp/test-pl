@@ -5,6 +5,7 @@ test("has title", async ({ page }, testinfo) => {
   await page.goto("/sdfgs");
 
   await expect(page).toHaveTitle(/titleContent/);
+
   expect(await page.screenshot()).toMatchSnapshot("content.png", {
     maxDiffPixels: 2,
   });
