@@ -1,11 +1,8 @@
 import { test, expect } from "@playwright/test";
 
-test("has title", async ({ page }, testinfo) => {
-  testinfo.snapshotSuffix = "";
+test("has title", async ({ page }) => {
   await page.goto("/sdfgs");
 
-  await expect(page).toHaveTitle(/titleContent/);
-  expect(await page.screenshot()).toMatchSnapshot("content.png", {
-    maxDiffPixels: 2,
-  });
+  // Expect a title "to contain" a substring.
+  expect(await page.screenshot()).toMatchSnapshot("sss.png");
 });

@@ -11,3 +11,4 @@ node_modules
 tailwind.config.ts
 remix.config.js
 remix.env.d.ts
+node_modules/
