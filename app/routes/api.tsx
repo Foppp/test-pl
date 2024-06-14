@@ -3,6 +3,7 @@ import { queryAiMobileFakeSearch } from "~/api/s";
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
+
   const { messages } = Object.fromEntries(formData);
   try {
     const response = await queryAiMobileFakeSearch({
