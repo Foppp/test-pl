@@ -11,10 +11,7 @@
     "test": "concurrently -r 'npm:test:*'",
     "test:eslint": "eslint --color --max-warnings=0 '**/*.[t|j]s?(x)'",
     "unit": "vitest",
-    "test:e2e": "npx playwright test",
-    "smartui-cloud": "npx smartui exec  node playwrightCloud.js",
-    "smartui-local": "npx smartui exec  node playwrightLocal.js",
-    "smartui-ignoreDOM": "npx smartui exec  node ignorePlaywright.js"
+    "test:e2e": "npx playwright test"
   },
   "dependencies": {
     "@lambdatest/smartui-cli": "^3.0.11",
