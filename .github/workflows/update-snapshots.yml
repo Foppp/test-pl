@@ -35,7 +35,6 @@ jobs:
         run: git fetch
       - name: Checkout Branch
         run: git checkout ${{ steps.get-branch-and-sha.outputs.branch }}
-      # Setup testing environment
       - uses: actions/setup-node@v4
         with:
           node-version: 18
