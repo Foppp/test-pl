@@ -29,7 +29,7 @@ export default function Index() {
       <div className="flex flex-col justify-between items-center w-[500px] mx-auto border-2 border-solid rounded-3xl bg-green-400">
         <div className="flex flex-col border-r border-solid border-black">
           <div className=" w-full min-h-52 items-start align-top self-start">
-            <div>content</div>
+            <div className="font-bold text-xl">content</div>
           </div>
           <div className="flex items-start align-top w-24 h-full self-start">
             <div className="max-h-52 h-full flex flex-col justify-center w-full">
