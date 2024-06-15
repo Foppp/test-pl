@@ -12,7 +12,7 @@ export function Frrr() {
     lastX: number;
     lastY: number;
   }>({
-    startX: 0,
+    startX: 2,
     startY: 0,
     lastX: 0,
     lastY: 0,
