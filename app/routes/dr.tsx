@@ -14,7 +14,7 @@ export function Frrr() {
   }>({
     startX: 2,
     startY: 0,
-    lastX: 0,
+    lastX: 2,
     lastY: 0,
   });
 
