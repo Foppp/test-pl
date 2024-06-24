@@ -47,6 +47,16 @@ jobs:
       - name: Update snapshots
         run: npx playwright test --update-snapshots --reporter=list
       # Commit the changes to the pull request branch
+      - name: Get last commit message
+        id: last-commit
+        run: |
+          echo "message=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
+          echo "author=$(git log -1 --pretty=\"%an <%ae>\")" >> $GITHUB_OUTPUT
+    
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "[CI] Update Snapshots"
+          commit_author: ${{ steps.last-commit.outputs.author }}
+          commit_message: ${{ steps.last-commit.outputs.message }}
+          commit_options: '--amend --no-edit'
+          push_options: '--force'
+          skip_fetch: true
