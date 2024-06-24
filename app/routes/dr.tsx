@@ -22,6 +22,7 @@ export function Frrr() {
     if (!boxRef.current || !containerRef.current) return;
 
     const box = boxRef.current;
+
     const container = containerRef.current;
 
     const onMouseDown = (e: MouseEvent) => {
@@ -64,7 +65,9 @@ export function Frrr() {
   return (
     <main>
       <div ref={containerRef} className="container w-screen h-screen">
-        <div ref={boxRef} className="box w-44 h-44 bg-green-500">aSDAsdasdSAD</div>
+        <div ref={boxRef} className="box w-44 h-44 bg-green-500">
+          aSDAsdasdSAD
+        </div>
       </div>
     </main>
   );
