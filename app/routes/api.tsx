@@ -8,7 +8,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     const response = await queryAiMobileFakeSearch({
       messages: JSON.parse(messages.toString()),
     });
-    // console.log("+++++++", response);
+    console.log("+++++++", response);
     return json({ response });
   } catch (e) {
     // console.log("+++++++e÷rror", e);
