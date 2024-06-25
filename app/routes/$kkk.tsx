@@ -38,7 +38,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="border-r border-solid border-black">Features!!!</div>
+        <div className="border-r border-solid border-black">Fea</div>
       </div>
     </div>
   );
