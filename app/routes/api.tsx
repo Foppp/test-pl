@@ -11,7 +11,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     console.log("+++++++", response);
     return json({ response });
   } catch (e) {
-    // console.log("+++++++e÷rror", e);
+    console.log("+++++++e÷rror", e);
   }
   //   return null;
 };
