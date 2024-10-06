@@ -9,7 +9,7 @@ import { useRef } from "react";
 export const meta: MetaFunction = () => {
   return [
     {
-      title: "titleContentfeefdf",
+      title: "titleContent",
     },
   ];
 };
@@ -18,7 +18,6 @@ export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
 
   const data = String(formData.get("data"));
-
   return json({ some: data });
 }
 
