@@ -22,7 +22,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
 export default function Index() {
   return (
-    <div className="w-screen h-screen bg-red-200 flex">
+    <div className="w-screen h-screen bg-red-200 flex !font-quick">
       <div className="flex flex-col justify-between items-center w-[500px] mx-auto py-10 my-auto rounded-3xl bg-neutral-300 border-2 border-black max-h-fit">
         <p className="font-bold text-3xl">TESTING</p>
         <p className="font-normal text-xl">VISUAL</p>
