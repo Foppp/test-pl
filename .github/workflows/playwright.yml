@@ -26,10 +26,10 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run tests updated snapshots
-        if: contains(steps.commits.outputs.messages, '/some-string')
+        if: contains(steps.commits.outputs.messages, '--update-snapshots')
         run: npx playwright test --update-snapshots --reporter=list
       - name: Run tests
-        if: ${{ !contains(steps.commits.outputs.messages, '/some-string') }}
+        if: ${{ !contains(steps.commits.outputs.messages, '--update-snapshots') }}
         run: npx playwright test
       - uses: actions/upload-artifact@v4
         if: failure()
