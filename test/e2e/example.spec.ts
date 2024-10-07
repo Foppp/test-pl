@@ -1,8 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-test("has title", async ({ page }, testinfo) => {
-  testinfo.snapshotSuffix = "";
-  await page.goto("/sdfgs");
+test("has title", async ({ page }) => {
+  await page.goto("/");
 
   await expect(page).toHaveTitle(/titleContent/);
 
