@@ -617,6 +617,10 @@ video {
   gap: 3rem !important;
 }
 
+.gap-5 {
+  gap: 1.25rem !important;
+}
+
 .rounded-3xl {
   border-radius: 1.5rem !important;
 }
@@ -669,13 +673,18 @@ video {
   line-height: 2.25rem !important;
 }
 
+.text-sm {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
+
 .text-xl {
   font-size: 1.25rem !important;
   line-height: 1.75rem !important;
 }
 
-.font-extrabold {
-  font-weight: 800 !important;
+.font-light {
+  font-weight: 300 !important;
 }
 
 .font-normal {

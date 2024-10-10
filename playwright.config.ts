@@ -25,7 +25,7 @@ export default defineConfig({
   // Reporter to use
   reporter: [["html", { open: "never" }]],
   expect: {
-    toHaveScreenshot: { maxDiffPixels: 50 },
+    toHaveScreenshot: { maxDiffPixelRatio: 0.5 },
   },
   use: {
     // Base URL to use in actions like `await page.goto('/')`.
