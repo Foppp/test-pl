@@ -674,8 +674,8 @@ video {
   line-height: 1.75rem !important;
 }
 
-.font-light {
-  font-weight: 300 !important;
+.font-extrabold {
+  font-weight: 800 !important;
 }
 
 .font-normal {
