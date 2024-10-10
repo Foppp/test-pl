@@ -30,6 +30,10 @@ export default defineConfig({
 
     // Collect trace when retrying the failed test.
     trace: "on-first-retry",
+    bypassCSP: true,
+    launchOptions: {
+      args: ['--disable-web-security']
+    }
   },
   // Configure projects for major browsers.
   projects: [
