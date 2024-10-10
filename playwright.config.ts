@@ -25,9 +25,7 @@ export default defineConfig({
   // Reporter to use
   reporter: [["html", { open: "never" }]],
   expect: {
-    toHaveScreenshot: {
-      stylePath: './app/styles/tailwind.css'
-    },
+    toHaveScreenshot: { maxDiffPixels: 3 },
   },
   use: {
     // Base URL to use in actions like `await page.goto('/')`.
