@@ -17,12 +17,13 @@ export default defineConfig({
 
   // Retry on CI only.
   retries: process.env.CI ? 2 : 0,
-  snapshotPathTemplate: './test/e2e/snaps/{projectName}/{testFilePath}/{arg}{ext}',
+  snapshotPathTemplate:
+    "./test/e2e/snaps/{projectName}/{testFilePath}/{arg}{ext}",
   // Opt out of parallel tests on CI.
   workers: process.env.CI ? 1 : undefined,
 
   // Reporter to use
-  reporter: [['html', { open: 'never' }]],
+  reporter: [["html", { open: "never" }]],
 
   use: {
     // Base URL to use in actions like `await page.goto('/')`.
@@ -30,16 +31,18 @@ export default defineConfig({
 
     // Collect trace when retrying the failed test.
     trace: "on-first-retry",
-    bypassCSP: true,
-    launchOptions: {
-      args: ['--disable-web-security']
-    }
   },
   // Configure projects for major browsers.
   projects: [
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: {
+        ...devices["Desktop Chrome"],
+        bypassCSP: true,
+        launchOptions: {
+          args: ["--disable-web-security"],
+        },
+      },
     },
   ],
   // Run your local dev server before starting the tests.
