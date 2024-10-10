@@ -1,49 +1,32 @@
+name: Playwright Tests
+ 
 on:
   push:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # Checkout and setup
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: lts/*
+          node-version: "latest"
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-      - name: Run visual tests
-        id: test-visual
-        run: cd packages/tests/visual && npx playwright test
-  
-  
-      # If the tests fail, upload the Playwright report as an artifact
-      # to the test result.
-      - name: Upload Playwright report
-        uses: actions/upload-artifact@v3
-        if: failure() && steps.test-visual.conclusion == 'failure'
+        run: npx playwright install --with-deps chromium
+      # Run Playwright tests
+      - name: Run Playwright tests
+        run: npx playwright test
+      # Upload the test result artifacts
+      - uses: actions/upload-artifact@v2
+        if: failure()
         with:
           name: playwright-report
-          path: packages/tests/visual/playwright-report/
-          retention-days: 3
-  
-  
-      # Also, in case of a failure, update the screenshots ...
-      - name: Update screenshots in visual tests
-        id: test-visual-update
-        if: failure() && steps.test-visual.conclusion == 'failure'
-        run: cd packages/tests/visual && npx playwright test --update-snapshots
-  
-  
-      # ... and store them in the test result as well.
-      - name: Upload updated Playwright screenshots
-        uses: actions/upload-artifact@v3
-        if: failure() && steps.test-visual-update.conclusion == 'success'
-        with:
-          name: playwright-screenshots-updated
-          path: packages/tests/visual/specs/**/*.png
-          retention-days: 3
+          path: playwright-report/
+          retention-days: 30
