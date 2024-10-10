@@ -7,14 +7,13 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import mono from '@fontsource/pt-mono/index.css';
-
+import mono from "@fontsource/pt-mono/index.css";
 
 import tailwindStyleSheetUrl from "./styles/tailwind.css";
 
 export const links: LinksFunction = () => [
   { rel: "preload", as: "style", href: tailwindStyleSheetUrl },
-  { rel: "stylesheet", href: mono },
+  { rel: "stylesheet", as: "font", href: mono },
   { rel: "stylesheet", href: tailwindStyleSheetUrl },
 ];
 
