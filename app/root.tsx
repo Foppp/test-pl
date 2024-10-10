@@ -9,7 +9,6 @@ import {
 } from "@remix-run/react";
 import mono from '@fontsource/pt-mono/index.css';
 
-
 import tailwindStyleSheetUrl from "./styles/tailwind.css";
 
 export const links: LinksFunction = () => [
