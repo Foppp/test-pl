@@ -31,7 +31,7 @@ export default function Index() {
           <div className="bg-yellow-600 w-10 h-10" />
           <div className="bg-blue-600 w-10 h-10" />
         </div>
-        <p className="font-normal text-sm">Check new text</p>
+        <p className="font-normal text-sm">Check new text!</p>
       </div>
     </div>
   );
