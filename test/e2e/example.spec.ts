@@ -7,6 +7,5 @@ test("has title", async ({ page }) => {
 
   await expect(page).toHaveTitle(/titleContent/);
   await setTimeout(1000);
-
   await expect(page).toHaveScreenshot();
 });
